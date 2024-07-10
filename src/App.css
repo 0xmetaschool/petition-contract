@@ -1,0 +1,156 @@
+/* Reset basic elements */
+html, body, #root, .App {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #F4F4F4;
+  color: #000000;
+}
+
+/* Main container styles */
+.App {
+  background-image: url('../public/background.jpg');
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  position: relative; /* Add this to create a stacking context */
+}
+
+/* Main content styles */
+.App-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  position: relative; /* Add this for footer positioning */
+}
+
+/* Title styles */
+.App-title {
+  color: #FA6400;
+  margin: 0;
+  font-weight: 700;
+  position: fixed; /* Fix the heading at the top */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center the heading horizontally */
+  background-color: #FFF; /* Add a background color to separate from content */
+  width: 100%; /* Full width */
+  padding: 10px 0; /* Add padding */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow */
+  z-index: 1; /* Ensure it's above other content */
+}
+
+/* Disconnect button styles */
+.disconnect-button {
+  border: none;
+  border-radius: 5px;
+  background-color: #b81768;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute; /* Position it absolutely */
+  top: 10px; /* Adjust top position for spacing */
+  right: 10px; /* Position it at the top right corner */
+  z-index: 2; /* Ensure it's above other content */
+}
+
+.disconnect-button:hover {
+  opacity: 0.8;
+}
+
+/* Generic button styles */
+button {
+  background-color: #b70092;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  height: 40px;
+}
+
+button:hover {
+  background-color: #a80394;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  background-color: rgb(188, 0, 119);
+  box-shadow: none;
+}
+
+/* Input field styles */
+input[type="text"],
+input[type="number"] {
+  border: 1px solid #DDD;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+}
+
+/* Form input container styles */
+.form-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Form input field styles */
+.form-input-container input[type="text"] {
+  flex: 1;
+  border: 1px solid #DDD;
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+}
+
+/* Form button styles */
+.form-input-container button {
+  background-color: #b70092;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  height: 40px;
+}
+
+.form-input-container button:hover {
+  background-color: #a80394;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-input-container button:active {
+  background-color: rgb(188, 0, 119);
+  box-shadow: none;
+}
+
+/* Footer text styles */
+.footer-text {
+  position: absolute;
+  bottom: 10px; /* Adjust bottom position for spacing */
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 10px;
+}
