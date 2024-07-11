@@ -1,5 +1,5 @@
 [project]
-authors = ["Author Name"]
+authors = ["Aswin Kumar"]
 entry = "main.sw"
 license = "Apache-2.0"
 name = "petition-contract"

@@ -1,0 +1,674 @@
+{
+  "encoding": "1",
+  "types": [
+    {
+      "typeId": 0,
+      "type": "()",
+      "components": [],
+      "typeParameters": null
+    },
+    {
+      "typeId": 1,
+      "type": "b256",
+      "components": null,
+      "typeParameters": null
+    },
+    {
+      "typeId": 2,
+      "type": "enum CampaignError",
+      "components": [
+        {
+          "name": "CampaignEnded",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "CampaignHasBeenCancelled",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "DeadlineNotReached",
+          "type": 0,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 3,
+      "type": "enum CampaignState",
+      "components": [
+        {
+          "name": "Cancelled",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "Successful",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "Progress",
+          "type": 0,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 4,
+      "type": "enum CreationError",
+      "components": [
+        {
+          "name": "DeadlineMustBeInTheFuture",
+          "type": 0,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 5,
+      "type": "enum Identity",
+      "components": [
+        {
+          "name": "Address",
+          "type": 9,
+          "typeArguments": null
+        },
+        {
+          "name": "ContractId",
+          "type": 13,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 6,
+      "type": "enum Option",
+      "components": [
+        {
+          "name": "None",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "Some",
+          "type": 8,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": [
+        8
+      ]
+    },
+    {
+      "typeId": 7,
+      "type": "enum UserError",
+      "components": [
+        {
+          "name": "SuccessfulCampaign",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "AlreadySigned",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "InvalidID",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "UnauthorizedUser",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "UserHasNotSigned",
+          "type": 0,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 8,
+      "type": "generic T",
+      "components": null,
+      "typeParameters": null
+    },
+    {
+      "typeId": 9,
+      "type": "struct Address",
+      "components": [
+        {
+          "name": "bits",
+          "type": 1,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 10,
+      "type": "struct Campaign",
+      "components": [
+        {
+          "name": "id",
+          "type": 19,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 11,
+      "type": "struct CampaignInfo",
+      "components": [
+        {
+          "name": "author",
+          "type": 5,
+          "typeArguments": null
+        },
+        {
+          "name": "state",
+          "type": 3,
+          "typeArguments": null
+        },
+        {
+          "name": "deadline",
+          "type": 19,
+          "typeArguments": null
+        },
+        {
+          "name": "total_signs",
+          "type": 19,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 12,
+      "type": "struct CancelledCampaignEvent",
+      "components": [
+        {
+          "name": "campaign_id",
+          "type": 19,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 13,
+      "type": "struct ContractId",
+      "components": [
+        {
+          "name": "bits",
+          "type": 1,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 14,
+      "type": "struct CreatedCampaignEvent",
+      "components": [
+        {
+          "name": "author",
+          "type": 5,
+          "typeArguments": null
+        },
+        {
+          "name": "campaign_info",
+          "type": 11,
+          "typeArguments": null
+        },
+        {
+          "name": "campaign_id",
+          "type": 19,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 15,
+      "type": "struct SignedEvent",
+      "components": [
+        {
+          "name": "campaign_id",
+          "type": 19,
+          "typeArguments": null
+        },
+        {
+          "name": "user",
+          "type": 5,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 16,
+      "type": "struct Signs",
+      "components": [
+        {
+          "name": "sign",
+          "type": 20,
+          "typeArguments": null
+        },
+        {
+          "name": "campaign_id",
+          "type": 19,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 17,
+      "type": "struct SuccessfulCampaignEvent",
+      "components": [
+        {
+          "name": "campaign_id",
+          "type": 19,
+          "typeArguments": null
+        },
+        {
+          "name": "total_signs",
+          "type": 19,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 18,
+      "type": "struct UnsignedEvent",
+      "components": [
+        {
+          "name": "campaign_id",
+          "type": 19,
+          "typeArguments": null
+        },
+        {
+          "name": "user",
+          "type": 5,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 19,
+      "type": "u64",
+      "components": null,
+      "typeParameters": null
+    },
+    {
+      "typeId": 20,
+      "type": "u8",
+      "components": null,
+      "typeParameters": null
+    }
+  ],
+  "functions": [
+    {
+      "inputs": [
+        {
+          "name": "campaign_id",
+          "type": 19,
+          "typeArguments": null
+        }
+      ],
+      "name": "cancel_campaign",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "deadline",
+          "type": 19,
+          "typeArguments": null
+        }
+      ],
+      "name": "create_campaign",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "campaign_id",
+          "type": 19,
+          "typeArguments": null
+        }
+      ],
+      "name": "end_campaign",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "campaign_id",
+          "type": 19,
+          "typeArguments": null
+        }
+      ],
+      "name": "sign_petition",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "campaign_id",
+          "type": 19,
+          "typeArguments": null
+        }
+      ],
+      "name": "unsign_petition",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "campaign_id",
+          "type": 19,
+          "typeArguments": null
+        },
+        {
+          "name": "user",
+          "type": 5,
+          "typeArguments": null
+        }
+      ],
+      "name": "campaign",
+      "output": {
+        "name": "",
+        "type": 6,
+        "typeArguments": [
+          {
+            "name": "",
+            "type": 10,
+            "typeArguments": null
+          }
+        ]
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "campaign_id",
+          "type": 19,
+          "typeArguments": null
+        }
+      ],
+      "name": "campaign_info",
+      "output": {
+        "name": "",
+        "type": 6,
+        "typeArguments": [
+          {
+            "name": "",
+            "type": 11,
+            "typeArguments": null
+          }
+        ]
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "user",
+          "type": 5,
+          "typeArguments": null
+        }
+      ],
+      "name": "sign_count",
+      "output": {
+        "name": "",
+        "type": 19,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "sign_history_index",
+          "type": 19,
+          "typeArguments": null
+        },
+        {
+          "name": "user",
+          "type": 5,
+          "typeArguments": null
+        }
+      ],
+      "name": "signed",
+      "output": {
+        "name": "",
+        "type": 6,
+        "typeArguments": [
+          {
+            "name": "",
+            "type": 16,
+            "typeArguments": null
+          }
+        ]
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [],
+      "name": "total_campaigns",
+      "output": {
+        "name": "",
+        "type": 19,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "user",
+          "type": 5,
+          "typeArguments": null
+        }
+      ],
+      "name": "user_campaign_count",
+      "output": {
+        "name": "",
+        "type": 19,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    }
+  ],
+  "loggedTypes": [
+    {
+      "logId": "8742946235045228304",
+      "loggedType": {
+        "name": "",
+        "type": 7,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "6475932288818496062",
+      "loggedType": {
+        "name": "",
+        "type": 2,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "1922245568625580893",
+      "loggedType": {
+        "name": "",
+        "type": 12,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "13390072562516710654",
+      "loggedType": {
+        "name": "",
+        "type": 4,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "5342178501053257728",
+      "loggedType": {
+        "name": "",
+        "type": 14,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "12050351775094179832",
+      "loggedType": {
+        "name": "",
+        "type": 17,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "4111964249968485702",
+      "loggedType": {
+        "name": "",
+        "type": 15,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "3423413078268424220",
+      "loggedType": {
+        "name": "",
+        "type": 18,
+        "typeArguments": []
+      }
+    }
+  ],
+  "messagesTypes": [],
+  "configurables": []
+}
